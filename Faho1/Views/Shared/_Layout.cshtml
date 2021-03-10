@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" href="~/images/icon.png">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/apps.css">
+</head>
+
+<body>
+    @RenderBody()
+<script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/panzoom.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/apps.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

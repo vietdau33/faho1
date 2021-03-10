@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body{
+	overflow: hidden;
+}
+
+.font-weight-bold{
+	font-weight: 600 !important;
+}
+
+.text-line-through{
+    text-decoration: line-through;
+    font-size: 80%;
+}
+
+.congratulation{
+	color: #00b4b4;
+}
+
+#header h1{
+	font-weight: 600;
+}
+
+#header .options_select_style ul{
+	list-style: none;
+}
+
+
+#header .options_select_style{
+	box-shadow: 0 5px 5px rgb(0 0 0 / 20%);
+}
+
+#header .options_select_style ul li{
+	width: 95px;
+	text-align: center;
+	margin: 0 3px;
+	cursor: pointer;
+}
+
+#header .options_select_style ul li img{
+	width: 100%;
+}
+
+
+#header .options_select_style ul li span{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#header .options_select_style ul li.active{
+	cursor: auto;
+    background-image: linear-gradient(0deg, rgba(23,143,70,0.25), rgba(23,143,70,0));
+    color: #00b4b4;
+}
+
+#footer{
+	box-shadow: 0 -5px 10px rgb(0 0 0 / 30%);
+}
+
+#footer .button_order button{
+	background-color: #00b4b4;
+	border-color: #00b4b4;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px;
+    font-weight: 600;
+}
+
+#bodyer{
+	background-color: #f2f2f2;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#bodyer .box_image{
+	width: 245px;
+	height: 245px;
+    border-radius: 14px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+#bodyer .box_image.box_preview_image{
+	width: 249px;
+	height: 249px;
+}
+
+#bodyer .box_image.box_choose_image{
+	border: 4px dashed #b0b0b0;
+}
+
+#bodyer .box_image img.img_btn_upload{
+	width: 80px;
+}
+
+#bodyer .box_image .box-upload{
+	width: 88%;
+	height: 88%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	margin: 0;
+	left: 13px;
+    top: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#bodyer .box_image.box_preview_image .box-bg-style{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#bodyer .box_image.box_preview_image[data-style=bold] .box-bg-style{
+	background-image: url('../images/frame/black-frame.svg')
+}
+
+#bodyer .box_image.box_preview_image[data-style=white] .box-bg-style{
+	background-image: url('../images/frame/white-frame.svg')
+}
+
+#bodyer .box_image.box_preview_image[data-box=classic] .box-upload{
+	width: 76%;
+    height: 76%;
+    left: 27px;
+    top: 23px;
+}
+
+#bodyer .box_image.box_preview_image img.img_loading_image{
+	width: 50%;
+}
+
+#modalEditImage .title-modal-edit-image{
+    margin-top: 8px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #8c8c8c;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    z-index: 2;
+    pointer-events: none;
+    text-align: center;
+}
+
+#modalEditImage.modal .modal-dialog{
+	max-width: 600px;
+	height: calc(100% - 20px);
+	margin: 10px auto;
+}
+
+#modalEditImage.modal .modal-content{
+	height: 100%;
+}
+
+#modalEditImage.modal .modal-body{
+	padding: 0;
+}
+#modalEditImage.modal .modal-header{
+	box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+	padding: 10px 1rem;
+}
+
+#modalEditImage.modal .modal-header .close{
+	padding: 13px 1rem;
+    margin: -10px -16px -10px -20px;
+}
+
+#modalEditImage.modal .button_action_save_image{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#modalEditImage .box-edit-image{
+	position: absolute;
+	top: 47%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 300px;
+}
+
+#modalEditImage .box-edit-image .box-upload{
+	width: 91%;
+	height: 91%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	margin: 0;
+	left: 11px;
+    top: 11px;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    z-index: 1;
+}
+
+#modalEditImage .box-edit-image[data-style=bold] .box-bg-style{
+	background-image: url('../images/frame/black-frame.svg');
+    background-size: 104%;
+    background-position: -5px -1px;
+}
+
+#modalEditImage .box-edit-image[data-style=white] .box-bg-style{
+	background-image: url('../images/frame/white-frame.svg');
+	background-size: 104%;
+    background-position: -5px -1px;
+}
+
+#modalEditImage .box-edit-image[data-box=classic] .box-upload{
+    width: 78%;
+    height: 78%;
+    left: 31px;
+    top: 30px;
+}
+
+#modalEditImage .box-edit-image .box-bg-style{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#modal_buy .btn-buy{
+	padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    background-color: #00b4b4;
+}
+.payment-detail{
+	padding:1rem !important;
+	border-radius: .25rem !important;
+	background-color: #f8f9fa  !important;
+}
+.discount{
+	padding-bottom: 1rem;
+}
+.form-discount{
+	position: relative;
+}
+.form-discount .searchbtn{
+	width: 6rem;
+    background-color: #00b4b4;
+    color: #fff;
+    border: 1px solid #00b4b4;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    border-left: 0;
+    height: calc(1.3em + .75rem + 5px);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.orderInvoiceInner h6{
+	font-weight: 600;
+
+}
+.payment-info{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: .5rem;
+	font-weight: 600;
+	font-size: 14px;
+}
+.btn-search{
+    background-color: #00b4b4;
+	padding:0 10px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	width: 100%;
+	border: none;
+	color:#fff;
+	font-weight:600;
+	border-radius: 5px;
+}
+.pay-method{
+	font-weight: 500;
+}
+.pay-method h6{
+	font-size: 16px;
+	font-weight: 500;
+
+}

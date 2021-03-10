@@ -1,0 +1,197 @@
+﻿@{
+    ViewData["Title"] = "Upload Image";
+}
+
+<div id="header" class="pt-4 position-relative">
+    <h1 class="text-center mb-3">Tải ảnh và đặt hàng</h1>
+    <div class="options_select_style">
+        <ul class="d-flex justify-content-center m-0">
+            <li class="p-3" data-style="bold" data-box="nomal">
+                <img src="~/images/style/bold.svg" alt="">
+                <span class="text-uppercase">bold</span>
+            </li>
+            <li class="p-3" data-style="bold" data-box="classic">
+                <img src="~/images/style/classic.svg" alt="">
+                <span class="text-uppercase">classic</span>
+            </li>
+            <li class="p-3" data-style="white" data-box="nomal">
+                <img src="~/images/style/white-bold.svg" alt="">
+                <span class="text-uppercase">bold</span>
+            </li>
+            <li class="p-3" data-style="white" data-box="classic">
+                <img src="~/images/style/white-classic.svg" alt="">
+                <span class="text-uppercase">classic</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="bodyer" class="p-4">
+    <div id="notification" class="text-center mb-3 d-none" style="font-size: 95%">
+        <div class="temp_price">
+            Bạn đã chọn <span class="num-product font-weight-bold">20</span> sản phẩm
+        </div>
+        <div class="total_price">
+            Tạm tính: <span class="num-price congratulation font-weight-bold">1.800.000</span> <span class="price-discount text-line-through d-none">3.000.000 đ</span>
+        </div>
+        <div class="temp_up_sale mt-2 d-none">
+            🎊 Chúc mừng, bạn đã đạt được ưu đãi <span class="congratulation font-weight-bold">40%</span>🎊
+        </div>
+    </div>
+    <div id="area_image_upload" class="d-flex flex-wrap justify-content-center">
+        <div class="box_image box_choose_image">
+            <label class="box-upload" for="input_upload_image">
+                <input type="file" accept="image/*" multiple id="input_upload_image" class="d-none">
+                <img src="~/images/upload.svg" alt="Upload" class="img_btn_upload">
+            </label>
+        </div>
+        <div class="box_image box_image_template d-none">
+            <div class="box-upload">
+                <img src="~/images/loading.svg" alt="Preview" class="img_btn_preview img_loading_image">
+            </div>
+            <div class="box-bg-style"></div>
+        </div>
+    </div>
+</div>
+<div id="footer" class="p-3 position-relative">
+    <div class="button_order text-center">
+        <button class="btn btn-primary" id="btn_open_buy">Đặt hàng ngay</button>
+    </div>
+</div>
+<div id="modal_edit_image">
+    <div class="modal" id="modalEditImage" tabindex="-1" role="dialog" aria-labelledby="modalEditImage" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center w-100 font-weight-bold" id="modalEditImageTitle">Tùy chọn</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="title-modal-edit-image">di chuyển và thu phóng</h6>
+                    <div class="button_detect_action_edit text-center">
+                        <button class="btn btn-info" onclick="Apps.accessDenied()">Quay Trái</button>
+                        <button class="btn btn-info" onclick="Apps.accessDenied()">Quay Phải</button>
+                    </div>
+                    <div class="body_frame_edit_image">
+                        <div class="box-edit-image overflow-hidden" data-style="bold" data-box="nomal">
+                            <div class="box-upload overflow-hidden">
+                                <img src="#" alt="Resize" class="img_resize">
+                            </div>
+                            <div class="box-bg-style"></div>
+                        </div>
+                    </div>
+                    <div class="button_action_save_image text-center">
+                        <div class="btn-save-image w-100 mt-2 mb-2">
+                            <button class="btn btn-info w-75 font-weight-bold btn-done-edit-image">Xong</button>
+                        </div>
+                        <div class="btn-delete-image mb-3">
+                            <button class="btn btn-outline-danger font-weight-bold">Xóa ảnh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal_buy">
+    <div class="modal fade modal-buy" id="modalBuy" tabindex="-1" role="dialog" aria-labelledby="modalBuy" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title font-weight-bold">Thông tin đơn hàng</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <h6 style="margin:10px 0;font-weight:500;">Địa chỉ giao hàng</h6>
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Họ và tên">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" class="form-control" placeholder="Số điện thoại">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <select name="" id="" class="form-control">
+                                <option value="">Hà nội</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="" id="" class="form-control" aria-placeholder="Quận/Huyện">
+                                <option value="">Bắc từ liêm</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Số nhà, ngõ , xóm">
+                        </div>
+                        <div class="payment-detail">
+                            <div class="pay-method pb-3 mb-3">
+                                <h6>Hình thức thanh toán</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="money" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="money">
+                                        Thanh toán tiền mặt khi nhận hàng
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="money" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="money">
+                                        Chuyển khoản qua tài khoản ngân hàng
+                                    </label>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="discount">
+                                <h6>Mã khuyến mãi</h6>
+                                <div class="form-discount">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <button class="searchbtn">Sử dụng</button>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="orderInvoice">
+                                <div class="orderInvoiceInner">
+                                    <h6>Thanh toán</h6>
+                                    <div class="payment-info">
+                                        <div class="Label">Số lượng</div>
+                                        <div class="Value">1</div>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="Label">Tạm tính</div>
+                                        <div class="Value">
+                                            <span class="price_text">150,000đ</span>
+                                        </div>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="Label">Phí vận chuyển</div>
+                                        <div class="Value">Miễn phí</div>
+                                    </div>
+                                    <div class="payment-info">
+                                        <div class="Label">Thành tiền</div>
+                                        <div class="Value">
+                                            <span class="price_text">150,000đ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn-search">Đặt mua</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
