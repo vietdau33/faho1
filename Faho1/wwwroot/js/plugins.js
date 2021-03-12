@@ -92,13 +92,9 @@ class Plugins{
 		$(".box_image.box_choose_image").before($htmlPreview[0]);
 
 		this.bindStyleForImage();
-
-		await this.sleep(1000);
-
 		var src = await this.uploadImageToServer(file);
-
 		var sizeImage = await this.getSizeImage(src);
-
+		
 		if(sizeImage.width < sizeImage.height){
     		$img.css('width', '100%');
     	}else{
